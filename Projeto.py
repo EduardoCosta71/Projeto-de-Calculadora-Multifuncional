@@ -29,21 +29,22 @@ if opcao == "1":
 #Saido do processamento na tela para o usuário.
     print("A média desse calculo é: ", soma)
 
-# Se o usuario escolher a opção 2 irá ser executado o cálculo fatorial.
+
+#Calculo fatorial, o usuário irá informar um valor para o calculo fatorial e o programa irá mostrar o resultado. ------------------------
 elif opcao == "2":
 
 #Entrada de valores para o  calculo fatorial
-    fator = int(input("Digite um valor para fazer o calculo Fatorial:"))
+    fatorial = int(input("Digite um valor para fazer o calculo Fatorial:"))
 
     #calculo fatorial utilizando a biblioteca "math".
-    calculo = math.factorial(fator)
+    calculo = math.factorial(fatorial)
 
     print("O valor Fatorial desse número é: ", calculo)
 
-#Se o usuario escolher a opção 3 irá ser executado a conversão de temperatura.
+#Calculo de conversão de temperatura, o usuário irá escolher qual conversão deseja fazer,
+#  depois irá informar o valor para a conversão e o programa irá mostrar o resultado. ------------------------
 elif opcao == "3":
 
-#
     print("Esolha qual conversão você deseja fazer: ")
     print(" 1 - Fahrenheit")
     print(" 2 - Celsius")
@@ -60,6 +61,9 @@ elif opcao == "3":
         cel = (far - 32) * 5 / 9
         print("A conversão é: ", cel, "graus")
 
+
+#Calculo de conversão de unidades de medida, o usuário irá escolher qual unidade de medida deseja converter,
+#depois irá informar o valor para a conversão e o programa irá mostrar o resultado. ------------------------
 elif opcao == "4":
 
     print("Para qual unidade de medida deseja converter: ")
@@ -67,23 +71,27 @@ elif opcao == "4":
     print(" 2 - Metros para centímetros.")
     print(" 3 - Horas para minutos.")
 
-    converte = (input("Escolha: "))
+    ConversoesCalculo = (input("Escolha: "))
+#Entrada de dados para o usuário escolher qual unidade de medida deseja converter,
+#  cada opção tem um calculo diferente, o programa irá solicitar o valor para a conversão de cada unidade de medida.
+    if ConversoesCalculo == "1": 
+        CalculoKM = float(input("Digite o KM desejado para conversão para centímetros: "))
+        ConversaoCM = CalculoKM * 1000
+        print("A conversão de KM para CM foi de: ", ConversaoCM, "CM")
 
-    if converte == "1": 
-        KM = float(input("Digite o KM desejado para conversão: "))
-        CM = KM * 100000
-        print("A conversão de KM para CM foi de: ", CM, "CM")
+    elif ConversoesCalculo == "2":
+        CalculoMetros = float(input("Digite os Metros para conversão para centímetros: "))
+        CM = CalculoMetros * 100
+        print("A conversão de Metros para Centimetros é: ", CM, "CM")
 
-    elif converte == "2":
-        M = float(input("Digite os Metros para conversão: "))
-        C = M * 1000
-        print("A conversão de Metros para Centimetros é: ", C, "CM")
+    elif ConversoesCalculo == "3":
+        CalculoHora = float(input("Digite as Horas para fazer a conversão: "))
+        ConversaoMin = CalculoHora * 60
+        print("A conversão de Horas para Minutos é: ", ConversaoMin, "Minutos")
 
-    elif converte == "3":
-        H = float(input("Digite as Horas para fazer a conversão: "))
-        min = H * 60
-        print("A conversão de Horas para Minutos é: ", min, "Minutos")
 
+#Cálculo de área de figuras geométricas, o usuário irá escolher qual figura deseja calcular a área,
+#depois irá informar os valores necessários para o cálculo da área e o programa irá mostrar o resultado. ------------------------
 elif opcao == "5":
     print("Calcular áreas da figuras:")
     print("1 - Quadrado")
@@ -91,43 +99,49 @@ elif opcao == "5":
     print("3 - Triângulo")
     print("4 - Círculo")
 
-    areaT = input("Escolha uma opção: ")
+#Entrada de dados para o usuário escolher qual figura deseja calcular a área.
+#Cada figura tem um calculo diferente, o programa irá solicitar os valores necessários para o cálculo da área de cada figura.
+    areaFiguras = input("Escolha uma opção: ")
 
-    if areaT == "1":
-        lateral = float(input("Diga o valor do Perimetro: "))
-        area = lateral* lateral
-        print("A área desse QUADRADO é: ", area, "cm")
+    if areaFiguras == "1":
+        lateral = float(input("Diga o valor do Perimetro do QUADRADO: "))
+        areaUm = lateral* lateral
+        print("A área desse QUADRADO é: ", areaUm, "cm")
 
-    elif areaT == "2":
-        baseDois = float(input("Digite o valor da base: "))
-        alturaDois = float(input("Digite o valor da altura: "))
+    elif areaFiguras == "2":
+        baseDois = float(input("Digite o valor da base do RETÂNGULO: "))
+        alturaDois = float(input("Digite o valor da altura do RETÂNGULO: "))
         areaDois = baseDois * alturaDois
 
         print("A área desse Retângulo é: ", areaDois)
 
-    elif areaT == "3":
-         baseTres = float(input("Digite o valor da base: "))
-         alturaTres = float(input("Digite o valor da altura: "))
+    elif areaFiguras == "3":
+         baseTres = float(input("Digite o valor da base do TRIÂNGULO: "))
+         alturaTres = float(input("Digite o valor da altura do TRIÂNGULO: "))
          areaTres = (baseTres * alturaTres) / 2
 
          print("A área desse Triângulo é: ", areaTres)
 
-    elif areaT == "4":
+    elif areaFiguras == "4":
         raio = float(input("Digite o Raio desse círculo: "))
         areaQuatro = math.pi * raio **2
 
         print("A área desse Círculo é: ", areaQuatro)
 
+
+#Calculo de Porcentagem, o usuário irá informar um valor e a porcentagem que
+#deseja retirar desse valor, o programa irá mostrar o valor da porcentagem retirada e o valor final. ------------------------
 elif opcao == "6":
     print("Informe um valor para a Porcentagem: ")
-    valorP = float(input("Digite o valor: "))
+    valorCalculo = float(input("Digite o valor: "))
     porcentagem = float(input("Digite a Porcentagem que você quer tirar do número: "))
 
-    porc = (valorP * porcentagem) / 100
-    final = valorP - porc
+    porc = (valorCalculo * porcentagem) / 100
+    calculo = valorCalculo - porc
 
-    print("O valor da Porcentagem retirada de %", porcentagem, "é: ", porc, "sobrando o valor de: ", final)
+    print("O valor da Porcentagem retirada de %", porcentagem, "é: ", porc, "sobrando o valor de: ", calculo)
 
+#Por fim, caso o usuário digite uma opção inválida, o programa irá mostrar a mensagem "Opção Inválida!".
 else:
     print("Opcão Inválida!")
     
